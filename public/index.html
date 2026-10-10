@@ -3,500 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DECLUTTER // UI & Interaction Engineering Showcase</title>
-    <meta name="description" content="A tactile UI/UX engineering showcase by Sanskar Katiyar. Demonstrates advanced frontend design systems, interactive statecraft, Web Audio micro-interactions, and brutalist-cyber ergonomics.">
-    
-    <!-- Design System Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>AI Declutter Guide</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- Ambient Lighting Backdrop Glow -->
-    <div class="ambient-glow-aura" aria-hidden="true"></div>
-
-
-    <!-- Main Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-left">
-            <ul class="nav-links">
-                <li><a href="#ui-showcase">00 // UI CRAFT</a></li>
-                <li><a href="#assistant" class="active">01 // SCANNER</a></li>
-                <li><a href="#punchcard">02 // PUNCH-PASS</a></li>
-                <li><a href="#guide">03 // MANUAL</a></li>
-            </ul>
-        </div>
-
-        <!-- Center Wordmark + Showcase Pill -->
-        <div class="logo-center">
-            <a href="#assistant" class="logo-link">DECLUTTER</a>
-            <span class="logo-badge-spec">UI LAB // v2.0</span>
-        </div>
-
-        <!-- Far-Right Controls: Sound FX, Theme Switch, and Profile -->
-        <div class="nav-right">
-            <!-- Tactical Sound FX Toggle -->
-            <button id="sfx-toggle" class="nav-icon-btn" aria-label="Toggle Sound Effects" title="Toggle Tactile Web Audio FX">
-                <i class="fas fa-volume-high"></i>
-                <span class="btn-text-hide">SFX ON</span>
-            </button>
-
-            <!-- Theme Toggle -->
-            <button id="theme-toggle" class="theme-toggle-brutal" aria-label="Toggle Tactical Theme">
-                <i class="fas fa-moon"></i>
-                <span id="theme-label">CARBON NIGHT</span>
-            </button>
-
-            <!-- Creator GitHub Profile Link -->
-            <a href="https://github.com/sanskaar01" target="_blank" rel="noopener noreferrer" class="nav-creator-pill" title="Sanskar Katiyar's GitHub Profile">
-                <i class="fab fa-github"></i>
-                <span class="creator-slug">sanskaar01</span>
-            </a>
-        </div>
+    <nav class="navbar">
+        <div class="logo">AI Declutter Guide</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#guide">Decluttering Guide</a></li>
+            <li><a href="#assistant">AI Assistant</a></li>
+            <li><a href="#tips">Tips & Challenges</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
     </nav>
 
     <main>
-        <!-- Top Hero Section -->
-        <header class="hero-section">
-            <div class="hero-minimal-block">
-                <div class="hero-badge-pill">
-                    <span class="pill-dot"></span>
-                    <span>EXPERIMENTAL UI SPECIMEN // FRONTEND ARCHITECTURE</span>
+        <section id="home" class="hero-section">
+            <h1>Transform Your Space with AI-Powered Decluttering</h1>
+            <p>Get personalized decluttering recommendations and transform your space into a minimalist haven.</p>
+        
+            <button class="cta-button" onclick="scrollToAssistant()">Start Your Decluttering Journey</button>
+        </section>
+
+        <section id="assistant" class="ai-assistant-section">
+            <h2>AI Decluttering Assistant</h2>
+            <div class="input-container">
+                <div class="text-input">
+                    <textarea id="textInput" placeholder="Describe your clutter situation..."></textarea>
+                    <div class="button-container">
+                        <button onclick="submitTextInput()">Get Suggestions</button>
+                    </div>
                 </div>
-
-                <h1 class="hero-minimal-headline">
-                    ELIMINATE THE JUNK.<br>
-                    RECLAIM YOUR <span class="highlight-volt">HEADSPACE</span>.
-                </h1>
-                
-                <p class="hero-minimal-desc">
-                    A tactical command center demonstrating advanced neo-brutalist aesthetics, tactile micro-interactions, responsive state machines, and resilient multi-modal AI integration.
-                </p>
-
-                <!-- Prominent Showcase Disclaimer Card -->
-                <div class="showcase-disclaimer-card" role="region" aria-label="Showcase Disclaimer">
-                    <div class="disclaimer-header">
-                        <div class="disclaimer-title-wrap">
-                            <i class="fas fa-compass-drafting disclaimer-icon"></i>
-                            <span class="disclaimer-title">UI &amp; DESIGN SYSTEM CAPABILITIES SHOWCASE</span>
-                        </div>
-                        <span class="sticker-badge sticker-volt"><i class="fas fa-circle-check"></i> PORTFOLIO DEMO</span>
+                <div class="image-input">
+                    <div class="file-upload-container">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & drop an image here or click to browse</p>
+                        <p>Supported formats: JPG, PNG, WEBP</p>
+                        <input type="file" id="imageInput" accept="image/*" onchange="updateFileName(this)">
                     </div>
-
-                    <p class="disclaimer-text">
-                        <strong>Project Context:</strong> This interface is an interactive showcase engineered by <strong>Sanskar Katiyar</strong> to demonstrate senior-level UI craftsmanship &mdash; including custom CSS token architectures, Web Audio tactile feedback, simulated computer vision scanners, and dual-theme ergonomics &mdash; <em>not a standalone commercial product</em>.
-                    </p>
-
-                    <div class="disclaimer-meta-grid">
-                        <div class="meta-item"><i class="fas fa-palette"></i> Dual-Theme Token Engine</div>
-                        <div class="meta-item"><i class="fas fa-waveform-lines"></i> Web Audio Synthesizer FX</div>
-                        <div class="meta-item"><i class="fas fa-gears"></i> Zero-Friction State Machines</div>
-                        <div class="meta-item"><i class="fas fa-lightbulb"></i> Interactive Pull-Cord Mechanics</div>
-                    </div>
-
-                    <div class="disclaimer-cta-row">
-                        <a href="#ui-showcase" class="brutal-btn brutal-btn-cyan" style="font-size: 0.85rem; padding: 0.6rem 1.2rem;">
-                            <i class="fas fa-layer-group"></i> EXPLORE UI SPECIFICATIONS
-                        </a>
-                        <button type="button" class="brutal-btn" onclick="toggleTokenInspector()" style="font-size: 0.85rem; padding: 0.6rem 1.2rem;">
-                            <i class="fas fa-sliders"></i> LIVE TOKEN INSPECTOR
-                        </button>
+                    <div class="file-name-display" id="fileNameDisplay"></div>
+                    <div class="button-container">
+                        <button onclick="submitImageInput()">Analyze Space</button>
                     </div>
                 </div>
             </div>
-        </header>
-
-        <!-- UI Capabilities & Architecture Breakdown Section -->
-        <section id="ui-showcase" class="ui-capabilities-section">
-            <div class="section-header-block">
-                <span class="section-code">// SPECIFICATION 00 &mdash; ARCHITECTURE DOSSIER</span>
-                <h2 class="section-title">ENGINEERED UI CAPABILITIES</h2>
-                <p class="section-subtitle">
-                    A structured technical tour of the frontend craftsmanship, design tokens, micro-interactions, and state engines demonstrated in this project.
-                </p>
-            </div>
-
-            <div class="capabilities-grid">
-                <!-- Capability 1 -->
-                <div class="capability-card">
-                    <div class="capability-card-top">
-                        <span class="capability-num">01</span>
-                        <span class="sticker-badge sticker-volt">THEMING ENGINE</span>
-                    </div>
-                    <h3 class="capability-title">Dual-Theme Token Architecture</h3>
-                    <p class="capability-desc">
-                        Seamlessly morphs between high-contrast "Raw Industrial Paper" and cyber-aesthetic "Carbon Night" using CSS custom properties with zero layout shift and calibrated contrast ratios.
-                    </p>
-                    <div class="capability-action">
-                        <button type="button" class="mini-tool-btn" onclick="quickThemeSwitch()">
-                            <i class="fas fa-circle-half-stroke"></i> TOGGLE THEME DEMO
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Capability 2 -->
-                <div class="capability-card">
-                    <div class="capability-card-top">
-                        <span class="capability-num">02</span>
-                        <span class="sticker-badge sticker-orange">HAPTIC AUDIO</span>
-                    </div>
-                    <h3 class="capability-title">Tactile Audio Micro-Interactions</h3>
-                    <p class="capability-desc">
-                        Synthetic mechanical relay clicks, punch ticket stamps, and pull-cord sounds generated dynamically via the native Web Audio API &mdash; requiring zero audio assets and zero external bandwidth.
-                    </p>
-                    <div class="capability-action">
-                        <button type="button" class="mini-tool-btn" onclick="testAudioFx()">
-                            <i class="fas fa-volume-high"></i> TEST TACTILE SOUND FX
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Capability 3 -->
-                <div class="capability-card">
-                    <div class="capability-card-top">
-                        <span class="capability-num">03</span>
-                        <span class="sticker-badge sticker-cyan">STATE MACHINE</span>
-                    </div>
-                    <h3 class="capability-title">Interactive State &amp; Storage</h3>
-                    <p class="capability-desc">
-                        Stateful 7-day punch pass with persistent LocalStorage synchronization, multi-vector scanner switching, real-time character boundary monitoring, and tactile card strike states.
-                    </p>
-                    <div class="capability-action">
-                        <a href="#punchcard" class="mini-tool-btn">
-                            <i class="fas fa-ticket"></i> TEST PUNCH PASS
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Capability 4 -->
-                <div class="capability-card">
-                    <div class="capability-card-top">
-                        <span class="capability-num">04</span>
-                        <span class="sticker-badge sticker-yellow">RESILIENT PIPELINE</span>
-                    </div>
-                    <h3 class="capability-title">Multi-Modal AI + Heuristic Fallback</h3>
-                    <p class="capability-desc">
-                        Production-grade resilience: communicates with Google Gemini 2.0 Flash for vision/text analysis while automatically deploying instant heuristic rules if offline or unauthenticated.
-                    </p>
-                    <div class="capability-action">
-                        <a href="#assistant" class="mini-tool-btn">
-                            <i class="fas fa-terminal"></i> RUN AUDIT SCANNER
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Live Design Token Inspector Drawer (Expandable) -->
-            <div class="token-inspector-drawer" id="tokenInspectorDrawer">
-                <div class="inspector-header">
-                    <div class="inspector-title">
-                        <i class="fas fa-sliders"></i> LIVE DESIGN TOKEN INSPECTOR
-                    </div>
-                    <button type="button" class="inspector-close-btn" onclick="toggleTokenInspector()" title="Close Inspector">
-                        <i class="fas fa-xmark"></i>
-                    </button>
-                </div>
-                <div class="inspector-content">
-                    <div class="token-group">
-                        <span class="token-group-title">CORE PALETTE (ACTIVE THEME)</span>
-                        <div class="token-swatches-grid">
-                            <div class="token-swatch">
-                                <div class="swatch-color" style="background: var(--bg-raw); border: 1px solid var(--border-color);"></div>
-                                <span class="swatch-label">--bg-raw</span>
-                            </div>
-                            <div class="token-swatch">
-                                <div class="swatch-color" style="background: var(--bg-surface); border: 1px solid var(--border-color);"></div>
-                                <span class="swatch-label">--bg-surface</span>
-                            </div>
-                            <div class="token-swatch">
-                                <div class="swatch-color" style="background: var(--color-volt);"></div>
-                                <span class="swatch-label">--color-volt</span>
-                            </div>
-                            <div class="token-swatch">
-                                <div class="swatch-color" style="background: var(--color-orange);"></div>
-                                <span class="swatch-label">--color-orange</span>
-                            </div>
-                            <div class="token-swatch">
-                                <div class="swatch-color" style="background: var(--color-cyan);"></div>
-                                <span class="swatch-label">--color-cyan</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="token-meta-row">
-                        <div class="meta-box">
-                            <span class="meta-label">TYPOGRAPHY</span>
-                            <span class="meta-value">Space Grotesk &amp; Space Mono</span>
-                        </div>
-                        <div class="meta-box">
-                            <span class="meta-label">BORDER STROKE</span>
-                            <span class="meta-value">2.5px Solid Brutalist</span>
-                        </div>
-                        <div class="meta-box">
-                            <span class="meta-label">SHADOW TOKENS</span>
-                            <span class="meta-value">Offset Hard Edge [4px, 7px, 10px]</span>
-                        </div>
-                        <div class="meta-box">
-                            <span class="meta-label">CURRENT THEME</span>
-                            <span class="meta-value" id="inspectorThemeDisplay">RAW PAPER (LIGHT)</span>
-                        </div>
-                    </div>
-                </div>
+            <div id="aiResponse" class="ai-response">
+                <!-- AI responses will be displayed here -->
             </div>
         </section>
 
-        <!-- Primary Clutter Scanner Console Section -->
-        <section id="assistant" class="scanner-section">
-            <div class="section-header-block">
-                <span class="section-code">// PROTOCOL 01 &mdash; MULTI-VECTOR AUDIT ENGINE</span>
-                <h2 class="section-title">CLUTTER SCANNER CONSOLE</h2>
-                <p class="section-subtitle">
-                    Feed descriptive space characteristics or upload photographic evidence. The audit engine analyzes spatial density and outputs an actionable tactical manifest.
-                </p>
-            </div>
-
-            <div class="scanner-console-container">
-                <div class="console-topbar">
-                    <div class="console-topbar-left">
-                        <span class="terminal-dot"></span>
-                        <span>TERMINAL READY // MULTI-VECTOR AUDIT</span>
-                    </div>
-                    <span id="console-status-pill" class="sticker-badge sticker-volt" style="padding: 0.15rem 0.6rem; font-size: 0.72rem;">STATUS: ONLINE</span>
-                </div>
-
-                <!-- Mode Switching Tabs -->
-                <div class="console-tabs" role="tablist">
-                    <button class="console-tab-btn active" id="tab-text-btn" onclick="switchScannerTab('text')" role="tab" aria-selected="true">
-                        <i class="fas fa-terminal"></i> 01 // TEXT AUDIT
-                    </button>
-                    <button class="console-tab-btn" id="tab-image-btn" onclick="switchScannerTab('image')" role="tab" aria-selected="false">
-                        <i class="fas fa-camera"></i> 02 // ROOM CAM SCAN
-                    </button>
-                </div>
-
-                <!-- Tab 1: Text Audit -->
-                <div class="tab-pane active" id="tab-text-pane" role="tabpanel">
-                    <div class="chips-container">
-                        <span class="chips-label"><i class="fas fa-bullseye"></i> QUICK TARGETS:</span>
-                        <button type="button" class="preset-chip" onclick="applyPreset('Messy work desk with loose cables, stacked mail, and cluttered storage')">
-                            <i class="fas fa-desktop"></i> DESK CLUTTER
-                        </button>
-                        <button type="button" class="preset-chip" onclick="applyPreset('Overcrowded clothing closet with unworn shirts and zero organized storage')">
-                            <i class="fas fa-shirt"></i> WARDROBE PURGE
-                        </button>
-                        <button type="button" class="preset-chip" onclick="applyPreset('Kitchen pantry overflowing with expired food items and disorganized space')">
-                            <i class="fas fa-box-open"></i> PANTRY SORT
-                        </button>
-                        <button type="button" class="preset-chip" onclick="applyPreset('Chaotic garage workbench packed with miscellaneous tools and clutter')">
-                            <i class="fas fa-wrench"></i> GARAGE CLEAROUT
-                        </button>
-                    </div>
-
-                    <div class="tactical-textarea-wrapper">
-                        <textarea id="textInput" class="tactical-textarea" placeholder="Describe the space you want to organize, sort, or declutter. Be specific about items, surfaces, and problem areas..."></textarea>
-                        <div class="textarea-footer-row">
-                            <span id="char-count">0 CHARACTERS</span>
-                            <span style="color: var(--color-orange);"><i class="fas fa-shield-halved"></i> KEYWORD VALIDATION ARMED</span>
-                        </div>
-                    </div>
-
-                    <div class="console-action-bar">
-                        <button class="brutal-btn brutal-btn-primary" id="btn-submit-text" onclick="submitTextInput()">
-                            <i class="fas fa-bolt"></i> EXECUTE TEXT AUDIT
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Tab 2: Room Cam Scan -->
-                <div class="tab-pane" id="tab-image-pane" role="tabpanel">
-                    <div class="room-cam-dropzone" id="dropzone" onclick="document.getElementById('imageInput').click()">
-                        <div class="radar-scanline" aria-hidden="true"></div>
-                        <i class="fas fa-cloud-arrow-up dropzone-icon"></i>
-                        <h3 class="dropzone-title">DROP EVIDENCE PHOTO HERE</h3>
-                        <p class="dropzone-sub">Accepts JPG, PNG, WEBP files up to 5MB for spatial evaluation.</p>
-                        
-                        <div class="file-selected-badge" id="fileSelectedBadge">
-                            <i class="fas fa-file-image"></i>
-                            <span id="fileNameDisplay">NO FILE SELECTED</span>
-                            <button type="button" onclick="clearSelectedFile(event)" style="margin-left: 0.5rem; color: #0A0A0A;" title="Remove File">
-                                <i class="fas fa-xmark"></i>
-                            </button>
-                        </div>
-
-                        <button type="button" class="brutal-btn" style="pointer-events: none; margin-top: 0.8rem;">
-                            <i class="fas fa-folder-open"></i> BROWSE LOCAL FILES
-                        </button>
-                        
-                        <input type="file" id="imageInput" accept="image/*" onchange="handleFileSelect(this)">
-                    </div>
-
-                    <div class="console-action-bar">
-                        <button class="brutal-btn brutal-btn-hazard" id="btn-submit-image" onclick="submitImageInput()">
-                            <i class="fas fa-microchip"></i> RUN COMPUTER VISION SCAN
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Scanning In Progress Indicator -->
-            <div id="scanIndicator" class="scan-in-progress" aria-live="polite">
-                <div class="scan-ticker-text">
-                    <span style="color: var(--color-orange);">/// RUNNING CLUTTER AUDIT MATRIX ///</span><br>
-                    <span style="font-size: 1rem; color: var(--text-muted); font-family: var(--font-mono);">
-                        ANALYZING SPATIAL BOUNDARIES...
-                    </span>
-                </div>
-                <div class="tactical-progress-bar">
-                    <div class="tactical-progress-fill"></div>
-                </div>
-            </div>
-
-            <!-- Declutter Action Manifest (AI Response Output) -->
-            <div id="aiResponse" class="manifest-container" aria-live="polite">
-                <!-- Dynamically populated by displayAIResponse() in main.js with Pull-Cord Bulb & Step Cards -->
-            </div>
-        </section>
-
-        <!-- 7-Day Minimalist Punch-Card Challenge -->
-        <section id="punchcard" class="punchcard-section">
-            <div class="section-header-block">
-                <span class="section-code">// PROTOCOL 02 &mdash; HABIT ACCELERATOR</span>
-                <h2 class="section-title">7-DAY DECLUTTER PUNCH-CARD</h2>
-                <p class="section-subtitle">
-                    A physical-style progressive purge protocol. Complete one tactical space clearance per day, punch your ticket, and establish permanent minimalism.
-                </p>
-            </div>
-
-            <div class="punch-card-wrapper" id="punchCardWrapper">
-                <div class="punch-card-header">
-                    <div class="punch-card-title">
-                        <i class="fas fa-ticket"></i> OFFICIAL 7-DAY MINIMALIST PUNCH-PASS
-                    </div>
-                    <span class="punch-card-stamp-id">SERIAL #PUNCH-7D-2026</span>
-                </div>
-
-                <div class="punch-card-body" id="punchCardBody">
-                    <!-- The 7 Punch Slots (Populated by JavaScript) -->
-                    <div class="punch-grid" id="punchGrid"></div>
-
-                    <!-- Progress & Action Bar -->
-                    <div class="punch-card-actions" id="punchCardActions">
-                        <div class="active-day-brief" id="activeDayBrief">
-                            <span class="mono-label" style="color: var(--color-orange);">ACTIVE OBJECTIVE:</span>
-                            <div class="active-day-title" id="activeDayTitle">DAY 1: DESK PURGE</div>
-                            <p class="active-day-desc" id="activeDayDesc">Clear every non-essential item from your primary desktop surface.</p>
-                        </div>
-
-                        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-                            <button class="brutal-btn brutal-btn-primary" id="btn-punch-day" onclick="stampActiveDay()">
-                                <i class="fas fa-stamp"></i> PUNCH COMPLETED DAY
-                            </button>
-                            <button class="brutal-btn" onclick="resetChallenge()" title="Reset Challenge">
-                                <i class="fas fa-rotate-left"></i> RESET
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tactical Field Manual (Core Minimalist Operating Procedures) -->
         <section id="guide" class="guide-section">
-            <div class="section-header-block">
-                <span class="section-code">// DOCTRINE 03 &mdash; CORE MINIMALIST OPERATING PROCEDURES</span>
-                <h2 class="section-title">TACTICAL FIELD MANUAL</h2>
-                <p class="section-subtitle">
-                    Four foundational laws of modern tactical minimalism. Apply these ruthlessly to prevent clutter relapse.
-                </p>
+            <h2>Quick Tips & Plans</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Home Organization</h3>
+                    <p>Tips for organizing your living spaces</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Digital Decluttering</h3>
+                    <p>Organize your digital life</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Mental Decluttering</h3>
+                    <p>Clear your mind and focus</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Minimalist Lifestyle</h3>
+                    <p>Embrace minimalism</p>
+                </div>
             </div>
+        </section>
 
-            <div class="manual-grid">
-                <div class="manual-card">
-                    <div>
-                        <div class="manual-card-top">
-                            <span class="manual-index">RULE // 01</span>
-                            <i class="fas fa-cube manual-icon"></i>
-                        </div>
-                        <h3>ROOM ZERO</h3>
-                        <p>When clearing a space, strip it to the bare floorboards or clear tabletop. Only reintroduce items with undeniable daily utility.</p>
-                    </div>
-                    <span class="manual-card-tag">SPATIAL DISCIPLINE</span>
-                </div>
-
-                <div class="manual-card">
-                    <div>
-                        <div class="manual-card-top">
-                            <span class="manual-index">RULE // 02</span>
-                            <i class="fas fa-hard-drive manual-icon"></i>
-                        </div>
-                        <h3>DIGITAL SCRUB</h3>
-                        <p>Zero desktop clutter, zero unread notifications. Digital debris produces identical cortisol spikes as physical room mess.</p>
-                    </div>
-                    <span class="manual-card-tag">BANDWIDTH DEFENSE</span>
-                </div>
-
-                <div class="manual-card">
-                    <div>
-                        <div class="manual-card-top">
-                            <span class="manual-index">RULE // 03</span>
-                            <i class="fas fa-arrows-split-up-and-left manual-icon"></i>
-                        </div>
-                        <h3>ONE-IN-ONE-OUT</h3>
-                        <p>Strict thermodynamic equilibrium. For every single item brought through the doorway, an existing item must be purged or donated.</p>
-                    </div>
-                    <span class="manual-card-tag">ANTI-EXPANSION</span>
-                </div>
-
-                <div class="manual-card">
-                    <div>
-                        <div class="manual-card-top">
-                            <span class="manual-index">RULE // 04</span>
-                            <i class="fas fa-boxes-packing manual-icon"></i>
-                        </div>
-                        <h3>THE QUARANTINE BOX</h3>
-                        <p>If hesitant about disposing an item, seal it in a marked box for 30 days. If unopened after a month, purge without looking inside.</p>
-                    </div>
-                    <span class="manual-card-tag">HEURISTIC SORTING</span>
+        <section id="tips" class="challenge-section">
+            <h2>7-Day Minimalist Challenge</h2>
+            <div class="challenge-container">
+                <button class="challenge-button" onclick="startChallenge()">Start Challenge</button>
+                <div id="challengeProgress" class="challenge-progress">
+                    <!-- Challenge progress will be displayed here -->
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Polished Portfolio Showcase Footer -->
-    <footer class="footer-minimal">
-        <div class="footer-inner">
-            <div class="footer-creator-box">
-                <div class="footer-brand">DECLUTTER // TACTICAL MINIMALISM ENGINE</div>
-                <p class="footer-disclaimer-note">
-                    <strong>UI/UX Engineering Showcase:</strong> Built by <a href="https://github.com/sanskaar01" target="_blank" rel="noopener noreferrer" class="footer-author-link">Sanskar Katiyar</a> to demonstrate design system architecture, tactile micro-interactions, and responsive frontend ergonomics.
-                </p>
-                <div class="footer-tags">
-                    <span class="footer-tag">VANILLA CSS TOKENS</span>
-                    <span class="footer-tag">WEB AUDIO API</span>
-                    <span class="footer-tag">GEMINI AI INTEGRATION</span>
-                    <span class="footer-tag">PDFKIT ENGINE</span>
-                </div>
-            </div>
-
-            <div class="footer-right-col">
-                <div class="footer-links">
-                    <a href="#ui-showcase"><i class="fas fa-layer-group"></i> UI Craft</a>
-                    <a href="#assistant"><i class="fas fa-terminal"></i> Scanner</a>
-                    <a href="#punchcard"><i class="fas fa-ticket"></i> 7-Day Pass</a>
-                    <a href="#guide"><i class="fas fa-book"></i> Field Manual</a>
-                    <a href="https://github.com/sanskaar01/declutter" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub Repository</a>
-                </div>
-                <div class="footer-copy-text">
-                    &copy; 2026 Sanskar Katiyar. Open Source under the MIT License.
-                </div>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2024 AI Declutter Guide. All rights reserved.</p>
     </footer>
 
-    <!-- Main Logic Script -->
     <script src="js/main.js"></script>
 </body>
 </html>

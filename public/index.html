@@ -3,100 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Declutter Guide</title>
+    <title>DECLUTTER // Tactical Minimalism Engine</title>
+    <meta name="description" content="A tactical AI decluttering command center. Purge the excess, audit your living spaces, and maintain zero cognitive drag.">
+    
+    <!-- Design System Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">AI Declutter Guide</div>
-        <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#guide">Decluttering Guide</a></li>
-            <li><a href="#assistant">AI Assistant</a></li>
-            <li><a href="#tips">Tips & Challenges</a></li>
-        </ul>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-            <i class="fas fa-moon"></i>
-        </button>
+
+    <!-- Main Navigation Bar (Clean Centered Logo + Far-Right Theme Toggle) -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-left">
+            <ul class="nav-links">
+                <li><a href="#assistant" class="active">01 // SCANNER</a></li>
+                <li><a href="#punchcard">02 // PUNCH-CARD</a></li>
+                <li><a href="#guide">03 // MANUAL</a></li>
+            </ul>
+        </div>
+
+        <!-- Cleanly Centered DECLUTTER Wordmark -->
+        <div class="logo-center">
+            <a href="#assistant" class="logo-link">DECLUTTER</a>
+        </div>
+
+        <!-- Far-Right Theme Toggle -->
+        <div class="nav-right">
+            <button id="theme-toggle" class="theme-toggle-brutal" aria-label="Toggle Tactical Theme">
+                <i class="fas fa-moon"></i>
+                <span id="theme-label">CARBON NIGHT</span>
+            </button>
+        </div>
     </nav>
 
     <main>
-        <section id="home" class="hero-section">
-            <h1>Transform Your Space with AI-Powered Decluttering</h1>
-            <p>Get personalized decluttering recommendations and transform your space into a minimalist haven.</p>
-        
-            <button class="cta-button" onclick="scrollToAssistant()">Start Your Decluttering Journey</button>
-        </section>
+        <!-- Top Hero & Primary Scanner Console (Immediate Utility Above the Fold) -->
+        <section id="assistant" class="scanner-section">
+            <div class="hero-minimal-block">
+                <h1 class="hero-minimal-headline">
+                    ELIMINATE THE JUNK.<br>
+                    RECLAIM YOUR <span class="highlight-volt">HEADSPACE</span>.
+                </h1>
+                <p class="hero-minimal-desc">
+                    A tactical console designed to ruthlessly audit physical clutter, clear digital friction, and build an uncompromising minimalist system.
+                </p>
+            </div>
 
-        <section id="assistant" class="ai-assistant-section">
-            <h2>AI Decluttering Assistant</h2>
-            <div class="input-container">
-                <div class="text-input">
-                    <textarea id="textInput" placeholder="Describe your clutter situation..."></textarea>
-                    <div class="button-container">
-                        <button onclick="submitTextInput()">Get Suggestions</button>
+            <div class="scanner-console-container">
+                <div class="console-topbar">
+                    <span>TERMINAL READY // MULTI-VECTOR AUDIT</span>
+                    <span id="console-status-pill" class="sticker-badge sticker-volt" style="padding: 0.1rem 0.4rem; font-size: 0.7rem;">STATUS: ONLINE</span>
+                </div>
+
+                <!-- Mode Switching Tabs -->
+                <div class="console-tabs" role="tablist">
+                    <button class="console-tab-btn active" id="tab-text-btn" onclick="switchScannerTab('text')" role="tab" aria-selected="true">
+                        <i class="fas fa-terminal"></i> 01 // TEXT AUDIT
+                    </button>
+                    <button class="console-tab-btn" id="tab-image-btn" onclick="switchScannerTab('image')" role="tab" aria-selected="false">
+                        <i class="fas fa-camera"></i> 02 // ROOM CAM SCAN
+                    </button>
+                </div>
+
+                <!-- Tab 1: Text Audit -->
+                <div class="tab-pane active" id="tab-text-pane" role="tabpanel">
+                    <div class="chips-container">
+                        <span class="chips-label">QUICK TARGETS:</span>
+                        <button type="button" class="preset-chip" onclick="applyPreset('Messy work desk with loose cables, stacked mail, and cluttered storage')">
+                            DESK CLUTTER
+                        </button>
+                        <button type="button" class="preset-chip" onclick="applyPreset('Overcrowded clothing closet with unworn shirts and zero organized storage')">
+                            WARDROBE PURGE
+                        </button>
+                        <button type="button" class="preset-chip" onclick="applyPreset('Kitchen pantry overflowing with expired food items and disorganized space')">
+                            PANTRY SORT
+                        </button>
+                        <button type="button" class="preset-chip" onclick="applyPreset('Chaotic garage workbench packed with miscellaneous tools and clutter')">
+                            GARAGE CLEAROUT
+                        </button>
+                    </div>
+
+                    <div class="tactical-textarea-wrapper">
+                        <textarea id="textInput" class="tactical-textarea" placeholder="Describe the space you want to organize, sort, or declutter. Be specific about items, surfaces, and problem areas..."></textarea>
+                        <div class="textarea-footer-row">
+                            <span id="char-count">0 CHARACTERS</span>
+                            <span style="color: var(--color-orange);"><i class="fas fa-shield-halved"></i> KEYWORD VALIDATION ARMED</span>
+                        </div>
+                    </div>
+
+                    <div class="console-action-bar">
+                        <button class="brutal-btn brutal-btn-primary" id="btn-submit-text" onclick="submitTextInput()">
+                            <i class="fas fa-bolt"></i> EXECUTE TEXT AUDIT
+                        </button>
                     </div>
                 </div>
-                <div class="image-input">
-                    <div class="file-upload-container">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                        <p>Drag & drop an image here or click to browse</p>
-                        <p>Supported formats: JPG, PNG, WEBP</p>
-                        <input type="file" id="imageInput" accept="image/*" onchange="updateFileName(this)">
+
+                <!-- Tab 2: Room Cam Scan -->
+                <div class="tab-pane" id="tab-image-pane" role="tabpanel">
+                    <div class="room-cam-dropzone" id="dropzone" onclick="document.getElementById('imageInput').click()">
+                        <i class="fas fa-cloud-arrow-up dropzone-icon"></i>
+                        <h3 class="dropzone-title">DROP EVIDENCE PHOTO HERE</h3>
+                        <p class="dropzone-sub">Accepts JPG, PNG, WEBP files up to 5MB for spatial evaluation.</p>
+                        
+                        <div class="file-selected-badge" id="fileSelectedBadge">
+                            <i class="fas fa-file-image"></i>
+                            <span id="fileNameDisplay">NO FILE SELECTED</span>
+                            <button type="button" onclick="clearSelectedFile(event)" style="margin-left: 0.5rem; color: #0A0A0A;" title="Remove File">
+                                <i class="fas fa-xmark"></i>
+                            </button>
+                        </div>
+
+                        <button type="button" class="brutal-btn" style="pointer-events: none;">
+                            <i class="fas fa-folder-open"></i> BROWSE LOCAL FILES
+                        </button>
+                        
+                        <input type="file" id="imageInput" accept="image/*" onchange="handleFileSelect(this)">
                     </div>
-                    <div class="file-name-display" id="fileNameDisplay"></div>
-                    <div class="button-container">
-                        <button onclick="submitImageInput()">Analyze Space</button>
+
+                    <div class="console-action-bar">
+                        <button class="brutal-btn brutal-btn-hazard" id="btn-submit-image" onclick="submitImageInput()">
+                            <i class="fas fa-microchip"></i> RUN COMPUTER VISION SCAN
+                        </button>
                     </div>
                 </div>
             </div>
-            <div id="aiResponse" class="ai-response">
-                <!-- AI responses will be displayed here -->
+
+            <!-- Scanning In Progress Indicator -->
+            <div id="scanIndicator" class="scan-in-progress" aria-live="polite">
+                <div class="scan-ticker-text">
+                    <span style="color: var(--color-orange);">/// RUNNING CLUTTER AUDIT MATRIX ///</span><br>
+                    <span style="font-size: 1rem; color: var(--text-muted); font-family: var(--font-mono);">
+                        ANALYZING SPATIAL BOUNDARIES...
+                    </span>
+                </div>
+                <div class="tactical-progress-bar">
+                    <div class="tactical-progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Declutter Action Manifest (AI Response Output) -->
+            <div id="aiResponse" class="manifest-container" aria-live="polite">
+                <!-- Dynamically populated by displayAIResponse() in main.js with Pull-Cord Bulb & Step Cards -->
             </div>
         </section>
 
+        <!-- 7-Day Minimalist Punch-Card Challenge -->
+        <section id="punchcard" class="punchcard-section">
+            <div class="section-header-block">
+                <span class="section-code">// PROTOCOL 02 — HABIT ACCELERATOR</span>
+                <h2 class="section-title">7-DAY DECLUTTER PUNCH-CARD</h2>
+                <p class="section-subtitle">
+                    A physical-style progressive purge protocol. Complete one tactical space clearance per day, punch your ticket, and establish permanent minimalism.
+                </p>
+            </div>
+
+            <div class="punch-card-wrapper" id="punchCardWrapper">
+                <div class="punch-card-header">
+                    <div class="punch-card-title">
+                        <i class="fas fa-ticket"></i> OFFICIAL 7-DAY MINIMALIST PUNCH-PASS
+                    </div>
+                </div>
+
+                <div class="punch-card-body" id="punchCardBody">
+                    <!-- The 7 Punch Slots (Populated by JavaScript) -->
+                    <div class="punch-grid" id="punchGrid"></div>
+
+                    <!-- Progress & Action Bar -->
+                    <div class="punch-card-actions" id="punchCardActions">
+                        <div class="active-day-brief" id="activeDayBrief">
+                            <span class="mono-label" style="color: var(--color-orange);">ACTIVE OBJECTIVE:</span>
+                            <div class="active-day-title" id="activeDayTitle">DAY 1: DESK PURGE</div>
+                            <p class="active-day-desc" id="activeDayDesc">Clear every non-essential item from your primary desktop surface.</p>
+                        </div>
+
+                        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                            <button class="brutal-btn brutal-btn-primary" id="btn-punch-day" onclick="stampActiveDay()">
+                                <i class="fas fa-stamp"></i> PUNCH COMPLETED DAY
+                            </button>
+                            <button class="brutal-btn" onclick="resetChallenge()" title="Reset Challenge">
+                                <i class="fas fa-rotate-left"></i> RESET
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tactical Field Manual (Quick Tips) -->
         <section id="guide" class="guide-section">
-            <h2>Quick Tips & Plans</h2>
-            <div class="tips-grid">
-                <div class="tip-card">
-                    <i class="fas fa-home"></i>
-                    <h3>Home Organization</h3>
-                    <p>Tips for organizing your living spaces</p>
-                </div>
-                <div class="tip-card">
-                    <i class="fas fa-laptop"></i>
-                    <h3>Digital Decluttering</h3>
-                    <p>Organize your digital life</p>
-                </div>
-                <div class="tip-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>Mental Decluttering</h3>
-                    <p>Clear your mind and focus</p>
-                </div>
-                <div class="tip-card">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Minimalist Lifestyle</h3>
-                    <p>Embrace minimalism</p>
-                </div>
+            <div class="section-header-block">
+                <span class="section-code">// DOCTRINE 03 — CORE MINIMALIST OPERATING PROCEDURES</span>
+                <h2 class="section-title">TACTICAL FIELD MANUAL</h2>
+                <p class="section-subtitle">
+                    Four foundational laws of modern tactical minimalism. Apply these ruthlessly to prevent clutter relapse.
+                </p>
             </div>
-        </section>
 
-        <section id="tips" class="challenge-section">
-            <h2>7-Day Minimalist Challenge</h2>
-            <div class="challenge-container">
-                <button class="challenge-button" onclick="startChallenge()">Start Challenge</button>
-                <div id="challengeProgress" class="challenge-progress">
-                    <!-- Challenge progress will be displayed here -->
+            <div class="manual-grid">
+                <div class="manual-card">
+                    <div>
+                        <div class="manual-card-top">
+                            <span class="manual-index">RULE // 01</span>
+                            <i class="fas fa-cube manual-icon"></i>
+                        </div>
+                        <h3>ROOM ZERO</h3>
+                        <p>When clearing a space, strip it to the bare floorboards or clear tabletop. Only reintroduce items with undeniable daily utility.</p>
+                    </div>
+                    <span class="manual-card-tag">SPATIAL DISCIPLINE</span>
+                </div>
+
+                <div class="manual-card">
+                    <div>
+                        <div class="manual-card-top">
+                            <span class="manual-index">RULE // 02</span>
+                            <i class="fas fa-hard-drive manual-icon"></i>
+                        </div>
+                        <h3>DIGITAL SCRUB</h3>
+                        <p>Zero desktop clutter, zero unread notifications. Digital debris produces identical cortisol spikes as physical room mess.</p>
+                    </div>
+                    <span class="manual-card-tag">BANDWIDTH DEFENSE</span>
+                </div>
+
+                <div class="manual-card">
+                    <div>
+                        <div class="manual-card-top">
+                            <span class="manual-index">RULE // 03</span>
+                            <i class="fas fa-arrows-split-up-and-left manual-icon"></i>
+                        </div>
+                        <h3>ONE-IN-ONE-OUT</h3>
+                        <p>Strict thermodynamic equilibrium. For every single item brought through the doorway, an existing item must be purged or donated.</p>
+                    </div>
+                    <span class="manual-card-tag">ANTI-EXPANSION</span>
+                </div>
+
+                <div class="manual-card">
+                    <div>
+                        <div class="manual-card-top">
+                            <span class="manual-index">RULE // 04</span>
+                            <i class="fas fa-boxes-packing manual-icon"></i>
+                        </div>
+                        <h3>THE QUARANTINE BOX</h3>
+                        <p>If hesitant about disposing an item, seal it in a marked box for 30 days. If unopened after a month, purge without looking inside.</p>
+                    </div>
+                    <span class="manual-card-tag">HEURISTIC SORTING</span>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 AI Declutter Guide. All rights reserved.</p>
+    <!-- Clean Minimal Footer -->
+    <footer class="footer-minimal">
+        <div class="footer-inner">
+            <span>DECLUTTER // TACTICAL MINIMALISM ENGINE &copy; 2026</span>
+            <div class="footer-links">
+                <a href="#assistant">Scanner</a>
+                <a href="#punchcard">7-Day Pass</a>
+                <a href="#guide">Field Manual</a>
+            </div>
+        </div>
     </footer>
 
+    <!-- Main Logic Script -->
     <script src="js/main.js"></script>
 </body>
 </html>

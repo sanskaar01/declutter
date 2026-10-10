@@ -1,81 +1,85 @@
-# AI Declutter Guide
+# DECLUTTER // Tactical Minimalism Engine
+### Frontend UI/UX Architecture & Interaction Design Showcase
+**Engineered & Designed by [Sanskar Katiyar](https://github.com/sanskaar01)**
 
-An AI-powered web application that helps users declutter their spaces using the Gemini API. The application provides personalized decluttering suggestions based on text descriptions and image analysis.
+## ⚡ UI Engineering & Interaction Highlights
 
-## Features
+1. **Dual-Theme Token Architecture**
+   - High-contrast **Raw Industrial Paper** (light) and **Carbon Night Obsidian** (dark) themes powered by calibrated CSS Custom Properties.
+   - Zero layout shift with custom brutalist offset shadow tokens (`4px`, `7px`, `10px`).
 
-- Text-based decluttering suggestions
-- Image analysis for cluttered spaces
-- 7-day minimalist challenge
-- PDF download of personalized decluttering plans
-- Responsive design for all devices
+2. **Zero-Asset Synthetic Web Audio Micro-Interactions**
+   - Fully interactive haptic audio feedback generated on the fly via the browser's native **Web Audio API** (oscillator nodes + gain envelopes).
+   - Authentic mechanical relay clicks, ticket stamps, pull-cord chain snaps, and celebratory chords with zero external mp3 bandwidth.
+   - Master sound toggle with persistent user preference storage.
 
-## Prerequisites
+3. **Interactive Vintage Pull-Cord Bulb & Action Manifest**
+   - Interactive pull-cord lamp that illuminates the entire action manifest with a warm ambient lighting glow.
+   - Task completion checkboxes with tactile strikethrough states and live progress tally counter.
+   - Instant PDF dossier download generated server-side using **PDFKit**.
 
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-- Gemini API key
+4. **7-Day Minimalist Punch-Pass State Machine**
+   - Physical ticket punch-pass with realistic stamped slots, LocalStorage persistence, and celebratory completion easter egg.
 
-## Setup
+5. **Resilient Multi-Modal AI Pipeline**
+   - Integrates with Google Gemini 2.0 Flash for vision and text clutter audits.
+   - Graceful offline fallback heuristics that ensure instant, tactical advice even without an API key configured.
 
-1. Clone the repository:
+6. **Live Design Token Inspector**
+   - Interactive HUD drawer for inspecting active color swatches, typography tokens, border metrics, and device viewport values.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Design System & Styling**: Pure Vanilla CSS3 (Custom Properties, Grid, Flexbox, Keyframes)
+- **Frontend Interaction**: Modular Modern JavaScript (ES6+), Web Audio API
+- **Backend & API**: Node.js, Express
+- **AI Integration**: Google Gemini API (`@google/generative-ai`)
+- **Document Export**: PDFKit
+- **File Ingestion**: Multer
+
+---
+
+## 🚀 Quick Start
+
+### 1. Clone & Install
+
 ```bash
-git clone <repository-url>
-cd ai-declutter-guide
-```
-
-2. Install dependencies:
-```bash
+git clone https://github.com/sanskaar01/declutter.git
+cd declutter
 npm install
 ```
 
-3. Create a `.env` file in the root directory and add your Gemini API key:
-```
+### 2. Configure Environment (Optional)
+
+Create a `.env` file in the root directory:
+
+```env
 PORT=3000
 GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-4. Start the server:
+*(Note: If no API key is provided, the engine automatically runs on high-fidelity tactical heuristic fallbacks!)*
+
+### 3. Launch Development Server
+
 ```bash
 npm start
 ```
 
-For development with auto-reload:
-```bash
-npm run dev
-```
+Visit `http://localhost:3000` in your browser.
 
-5. Open your browser and navigate to `http://localhost:3000`
+---
 
-## Usage
+## 👤 Author & Design Craft
 
-1. **Text-based Analysis**
-   - Enter a description of your cluttered space
-   - Click "Get Suggestions" to receive personalized decluttering steps
+**Sanskar Katiyar**  
+- GitHub: [@sanskaar01](https://github.com/sanskaar01)
+- Repository: [sanskaar01/declutter](https://github.com/sanskaar01/declutter)
 
-2. **Image-based Analysis**
-   - Upload an image of your cluttered space
-   - Click "Analyze Space" to get AI-powered suggestions
+---
 
-3. **7-Day Challenge**
-   - Click "Start Challenge" to begin the minimalist challenge
-   - Complete each day's task and track your progress
+## 📄 License
 
-4. **Download Plans**
-   - After receiving suggestions, click "Download Plan" to get a PDF version
-
-## Technologies Used
-
-- Frontend: HTML, CSS, JavaScript
-- Backend: Node.js, Express
-- AI: Google Gemini API
-- PDF Generation: PDFKit
-- Image Processing: Multer
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is open-source under the [MIT License](LICENSE).

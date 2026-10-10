@@ -2,13 +2,6 @@
 ### Frontend UI/UX Architecture & Interaction Design Showcase
 **Engineered & Designed by [Sanskar Katiyar](https://github.com/sanskaar01)**
 
----
-
-> [!IMPORTANT]
-> **PORTFOLIO SHOWCASE NOTICE**: This repository is an interactive showcase engineered to demonstrate advanced UI craftsmanship, custom design systems, tactile neo-brutalist / cyber-minimalist ergonomics, and zero-dependency Web Audio micro-interactions. It is intended as an exhibition of senior-level frontend engineering capabilities rather than a standalone commercial product.
-
----
-
 ## ⚡ UI Engineering & Interaction Highlights
 
 1. **Dual-Theme Token Architecture**

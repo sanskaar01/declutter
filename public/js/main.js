@@ -69,7 +69,9 @@ function initThemeToggle() {
     const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
     const htmlEl = document.documentElement;
 
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    // Ensure default theme is light (Raw Paper) so tactile paper texture is always active
+    const savedTheme = 'light';
+    localStorage.setItem('theme', 'light');
     applyTheme(savedTheme);
 
     if (themeToggle) {

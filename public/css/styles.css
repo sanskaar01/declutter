@@ -495,9 +495,10 @@ button {
 
 /* --- Main Layout --- */
 main {
-    max-width: 1200px;
+    max-width: 1440px;
+    width: 95%;
     margin: 0 auto;
-    padding: 2.5rem 1.5rem 5rem;
+    padding: 2.5rem 2rem 5rem;
     display: flex;
     flex-direction: column;
     gap: 4.5rem;
@@ -540,7 +541,7 @@ main {
 .section-subtitle {
     font-size: 0.96rem;
     line-height: 1.6;
-    max-width: 720px;
+    max-width: 880px;
     font-weight: 600;
     color: var(--text-primary);
 }
@@ -550,16 +551,18 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .hero-minimal-block {
     text-align: center;
-    max-width: 880px;
+    width: 100%;
+    max-width: 1360px;
     margin: 0 auto;
     background-color: var(--bg-surface);
     border: var(--border-width) solid var(--border-color);
     box-shadow: var(--shadow-xl);
-    padding: 2.5rem 2.2rem;
+    padding: 3rem 3.5rem;
     border-radius: 4px;
     position: relative;
     z-index: 1;
@@ -590,27 +593,28 @@ main {
 }
 
 .hero-minimal-headline {
-    font-size: clamp(2.3rem, 5.2vw, 4rem);
+    font-size: clamp(2.4rem, 4.6vw, 4.2rem);
     margin-bottom: 1.2rem;
-    line-height: 1.05;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
 .hero-minimal-headline .highlight-volt {
     background-color: var(--color-volt);
     color: #0A0A0A;
-    padding: 0 0.4rem;
+    padding: 0 0.5rem;
     display: inline-block;
     border: 2px solid var(--border-color);
     box-shadow: 2px 2px 0px var(--border-color);
 }
 
 .hero-minimal-desc {
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.65;
     font-weight: 600;
-    max-width: 760px;
-    margin: 0 auto 2rem;
+    max-width: 1020px;
+    margin: 0 auto 2.2rem;
 }
 
 /* High-Impact Showcase Context Card */
@@ -619,10 +623,12 @@ main {
     background-color: var(--bg-subtle);
     border: var(--border-width) solid var(--border-color);
     box-shadow: var(--shadow-md);
-    padding: 1.6rem 1.8rem;
+    padding: 2rem 2.6rem;
     margin-top: 1.5rem;
     border-radius: 4px;
     position: relative;
+    width: 100%;
+    box-sizing: border-box;
     overflow: hidden;
 }
 
@@ -1932,6 +1938,16 @@ main {
 
 /* --- Responsive Adaptations --- */
 @media (max-width: 960px) {
+    main {
+        width: 100%;
+        padding: 2rem 1.25rem 4rem;
+    }
+    .hero-minimal-block {
+        padding: 2.2rem 1.6rem;
+    }
+    .showcase-disclaimer-card {
+        padding: 1.6rem 1.4rem;
+    }
     .navbar {
         grid-template-columns: 1fr auto;
         padding: 0.8rem 1.2rem;
